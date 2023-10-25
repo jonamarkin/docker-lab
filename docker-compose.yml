@@ -1,18 +1,18 @@
-version: '1'
+version: "1"
 services:
   math-service:
-    build: <path>
-    container_name: <image name>
+    build: ./math_py
+    container_name: math-container
 
   string-service:
-    build: <path>
-    container_name: <image name> 
+    build: ./string_py
+    container_name: string-container
 
   gateway:
-    build: <path>
-    container_name: <image name>
+    build: ./gateway
+    container_name: gateway-container
     ports:
-      - <port>:<port>
+      - 8082:8082
     depends_on:
       - math-service
       - string-service
